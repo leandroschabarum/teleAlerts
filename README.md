@@ -2,7 +2,7 @@
 
 Simple python program that sends a message for a Telegram bot.
 
-An example of implementation would be to monitor a running program and send alerts when it encounters an error.
+An example of implementation would be to check a running program and send alerts when it encounters an error.
 
 
 ## Usage
@@ -26,7 +26,7 @@ with open(os.path.join(os.getcwd(), (filename + '.conf')), 'w') as configfile:
 configfile.close()
 ```
 
-If you want to use it to monitor a program in Linux, you should be able to redirect the output of the program (or another shell script that executes that program) to the input of teleAlerts.py. As an example:
+If you want to use it to check output of a program in Linux, you should be able to redirect the output of the program (or another shell script that executes that program) to the input of teleAlerts.py. As an example:
 
 ```python
 # function declarations are here (at least one would imagine they are) #
@@ -41,5 +41,5 @@ if __name__ == '__main__':
 #!/bin/bash
 
 myrunningcommand | python teleAlerts.py
-# remember that myrunningcommand has to have an output, otherwise the input will be empty
+# remember that myrunningcommand has to have an output, otherwise the input of teleAlerts.py will be empty
 ```
