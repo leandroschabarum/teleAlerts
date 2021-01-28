@@ -17,7 +17,7 @@ def telegram_bot_send_text(info, msg: str):
 	tk = info.get('TELEGRAM_chat_info', 'token')
 	cid = info.get('TELEGRAM_chat_info', 'chatID')
 
-	txt = f'https://api.telegram.org/bot{tk}sendMessage?chat_id={cid}&parse_mode=Markdown&text={msg}'
+	txt = f'https://api.telegram.org/bot{tk}/sendMessage?chat_id={cid}&parse_mode=Markdown&text={msg}'
 	response = requests.get(txt)
 
 	return response.json()
