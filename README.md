@@ -41,5 +41,6 @@ if __name__ == '__main__':
 #!/bin/bash
 
 myrunningcommand | python teleAlerts.py
-# remember that myrunningcommand has to have an output, otherwise the input of teleAlerts.py will be empty
 ```
+
+Remember that 'myrunningcommand' has to have an output, otherwise the input of teleAlerts.py will be empty.

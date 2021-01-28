@@ -24,5 +24,8 @@ def telegram_bot_send_text(info, msg: str):
 
 if __name__ == '__main__':
 	auth = confINFO('alerts.conf')
-	message = input(f'{datetime.now()} />_ ')
-	telegram_bot_send_text(auth, message)
+	message = input()
+
+	if bool(message) is True:
+		message = f'/>_ {datetime.now()}\n{message}'
+		telegram_bot_send_text(auth, message)
