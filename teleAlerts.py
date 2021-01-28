@@ -17,15 +17,15 @@ def telegram_bot_send_text(info, msg: str):
 	tk = info.get('TELEGRAM_chat_info', 'token')
 	cid = info.get('TELEGRAM_chat_info', 'chatID')
 
-	txt = f'https://api.telegram.org/bot{tk}/sendMessage?chat_id={cid}&parse_mode=Markdown&text={msg}'
+	txt = f"https://api.telegram.org/bot{tk}/sendMessage?chat_id={cid}&parse_mode=Markdown&text={msg}"
 	response = requests.get(txt)
 
 	return response.json()
 
-if __name__ == '__main__':
-	auth = confINFO('alerts.conf')
-	message = input()
+if __name__ == "__main__":
+	auth = confINFO("alerts.conf")
+	message = input().strip("\t\v\r\b")
+	header = f"*/>_* _{datetime.now()}_\n"
 
 	if bool(message) is True:
-		message = f'/>_ {datetime.now()}\n{message}'
-		telegram_bot_send_text(auth, message)
+		telegram_bot_send_text(auth, header+message)
