@@ -23,7 +23,7 @@ def telegram_bot_send_text(info, msg: str):
 	return response.json()
 
 if __name__ == "__main__":
-	auth = confINFO("alerts.conf")
+	auth = confINFO("alerts.conf")  # path to file
 	message = input().strip("\t\v\r\b")
 	header = f"*/>_* _{datetime.now()}_\n"
 
