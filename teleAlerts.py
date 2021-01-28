@@ -1,5 +1,5 @@
 import configparser
-import datetime
+from datetime import datetime
 import requests
 
 def confINFO(filename: str):
@@ -24,5 +24,5 @@ def telegram_bot_send_text(info, msg: str):
 
 if __name__ == '__main__':
 	auth = confINFO('alerts.conf')
-	message = 'test message'
+	message = input(f'{datetime.now()} />_ ')
 	telegram_bot_send_text(auth, message)
